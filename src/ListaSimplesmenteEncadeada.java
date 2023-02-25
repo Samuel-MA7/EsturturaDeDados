@@ -25,24 +25,17 @@ public class ListaSimplesmenteEncadeada<T> {
 			return "[]";
 		}
 		
-		StringBuilder builder = new StringBuilder();
+		StringBuilder builder = new StringBuilder("[");
 		
 		No<T> atual = this.inicio;
-		if(this.inicio == this.ultimo) {
-			builder.append(atual.getElemento());
-		} else {
+		for(int i = 0; i < this.tamanho - 1; i++) {
 			builder.append(atual.getElemento()).append(",");
-		}
-		while(atual.getProximo() != null) {
 			atual = atual.getProximo();
-			if(atual.getProximo() != null) {
-				builder.append(atual.getElemento()).append(",");
-			} else {
-				builder.append(atual.getElemento());
-			}
 		}
+		builder.append(atual.getElemento()).append("]");
 		
 		return builder.toString();
+		
 	}
 	
 }
