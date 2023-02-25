@@ -21,7 +21,28 @@ public class ListaSimplesmenteEncadeada<T> {
 	
 	@Override
 	public String toString() {
-		return "ListaSimplesmenteEncadeada [inicio=" + inicio + "]";
+		if(this.tamanho == 0) {
+			return "[]";
+		}
+		
+		StringBuilder builder = new StringBuilder();
+		
+		No<T> atual = this.inicio;
+		if(this.inicio == this.ultimo) {
+			builder.append(atual.getElemento());
+		} else {
+			builder.append(atual.getElemento()).append(",");
+		}
+		while(atual.getProximo() != null) {
+			atual = atual.getProximo();
+			if(atual.getProximo() != null) {
+				builder.append(atual.getElemento()).append(",");
+			} else {
+				builder.append(atual.getElemento());
+			}
+		}
+		
+		return builder.toString();
 	}
 	
 }
