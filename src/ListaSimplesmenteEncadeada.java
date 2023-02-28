@@ -19,6 +19,19 @@ public class ListaSimplesmenteEncadeada<T> {
 		return this.tamanho;
 	}
 	
+	public void limpar() {
+		for(No<T> atual = this.inicio; atual != null;) {
+			No<T> proximo = atual.getProximo();
+			atual.setElemento(null);
+			atual.setProximo(null);
+			atual = proximo;
+		}
+		
+		this.inicio = null;
+		this.ultimo = null;
+		this.tamanho = 0;
+	}
+	
 	@Override
 	public String toString() {
 		if(this.tamanho == 0) {

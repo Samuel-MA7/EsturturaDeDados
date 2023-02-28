@@ -11,12 +11,9 @@ public class Main {
 		System.out.println("Tamanho = " + lista.getTamanho());
 		System.out.println(lista);
 		
-		ListaSimplesmenteEncadeada<Integer> novaLista = new ListaSimplesmenteEncadeada<>();
-		novaLista.adicionar(1);
-		novaLista.adicionar(2);
-		novaLista.adicionar(3);
-		novaLista.adicionar(4);
-		System.out.println(novaLista);
+		lista.limpar();
+		System.out.println(lista);
+		System.out.println("Tamanho = " + lista.getTamanho());
 		
 	}
 
